@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+// <----------------Primary-------------------->
+
+$Light-red: hsl(0, 100%, 67%);
+$Orangey-yellow: hsl(39, 100%, 56%);
+$Green-teal: hsl(166, 100%, 37%);
+$Cobalt-blue: hsl(234, 85%, 45%);
+
+// <------------Gradients-------------->
+
+$Light-slate-blue: hsl(252, 100%, 67%); // (background)
+$Light-slate-blue-2: hsl(252, 5%, 80%);
+$Light-slate-blue-3: hsl(252, 100%, 77%);
+$Light-royal-blue: hsl(241, 81%, 54%); // (background)
+$Gradient-background: hsl(252, 100%, 67%), hsl(241, 81%, 54%); // (background)
+$Violet-blue: hsla(256, 72%, 46%, 1); // (circle)
+$Persian-blue: hsla(241, 72%, 46%, 0); // (circle)
+
+// <-------------Neutral------------------>
+
+$Pale-blue: hsl(221, 100%, 96%);
+$Light-lavender: hsl(241, 100%, 97%);
+$Dark-gray-blue: hsl(224, 27%, 50%);
+$button: hsl(224, 27%, 30%);
+$button-hover: hsl(224, 27%, 20%);
+
+// <-------------------Main-Card------------------------------>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    max-width: 375px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Hanken Grotesk', sans-serif;
+    
+
+    // <---------------first-card---------------------->
+
+    .card-result {
+        width: 375px;
+        height: 355px;
+        background-image: linear-gradient($Gradient-background);
+        text-align: center;
+        border-radius: 0 0 30px 30px;
+        color: white;
+
+        .result {
+            margin: 17px 0;
+            color: $Light-slate-blue-2;
+        }
+
+        .circle {
+            margin: 0 0 25px 115px;
+            width: 145px;
+            height: 145px;
+            border-radius: 50%;
+            text-align: center;
+            background-image: linear-gradient($Violet-blue, $Persian-blue);
+            padding: 28px;
+            .number {
+                color: $Light-slate-blue-3;
+            }
+            .number-of-number {
+                color: white;
+                font-size: 50px;
+                font-weight: 700;
+            }
+        }
+
+        .score {
+            margin: 17px 40px;
+            color: $Light-slate-blue-2;
+        }
+
+    }
+
+    // <----------------------second-card--------------------------->
+
+    .summary {
+        width: 345px;
+        height: 453px;
+        margin: 28px 0 28px 30px;
+        
+        h3 {
+            margin-bottom: 1rem;
+        }
+
+        div {
+            font-weight: 700;
+            width: 315px;
+            height: 55px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding: .9rem;
+            border-radius: 10px;
+            background-color: $Light-lavender;
+
+            .img {
+                display: flex;
+                align-items: center;
+                gap: 7px;
+            }
+        }
+
+        .reaction {
+            color: $Light-red;
+        }
+        .memory {
+            color: $Orangey-yellow;
+        }
+        .verbal {
+            color: $Green-teal;
+        }
+        .visual {
+            color: $Light-royal-blue;
+        }
+
+        .obtained {
+            color: black;
+        }
+        .maximum {
+            color: $Dark-gray-blue;
+        }
+
+        button {
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            width: 315px;
+            height: 55px;
+            border-radius: 80px;
+            border: none;
+            background-color: $button;
+            margin-top: 1rem;
+
+        }
+        button:hover {
+            cursor: pointer;
+            background-color: $button-hover;
+        }
+    }
+
+}
+
+@media screen and (min-width:1080px) {
+    body {
+        background-color: $Light-lavender;
+    
+        .card {
+            margin: 300px auto;
+            min-width: 738px;
+            height: 512px;
+            flex-direction: row;
+            position: relative;
+            .card-result {
+                border-radius: 30px;
+                min-height: 512px;
+                z-index: 2;
+                .result {
+                    margin: 2rem 0 2.3rem 0;
+                }
+
+                .circle {
+                    width: 180px;
+                    height: 180px;
+                    margin: 0 auto;
+                    padding-top: 2.6rem;
+                    margin-bottom: 3rem;
+                }
+
+                .score {
+                    margin: 2.5rem 4.5rem;
+                }
+            }
+
+            // <---------------Second-Card------------->
+
+            .summary {
+                margin: 0;
+                background-color: white;
+                border-radius: 0 30px 30px 0;
+                min-height: 511px;
+                min-width: 397px;
+                position: absolute;
+                left: 21rem;
+                h3 {
+                    padding: 2rem 0 0 3.5rem;
+                }
+                div {
+                    margin: 1.5rem 0 0 3.5rem;
+                }
+                button {
+                    margin: 2.5rem 0 0 3.5rem;
+                }
+
+                
+            }
+            
+        }
+    }
+}
+
+
+
+
+.attribution {
+    font-size: 15px; text-align: center; }
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
